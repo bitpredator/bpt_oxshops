@@ -7,3 +7,4 @@
 
 # 1.0.0
 1. Translation support through local files (native way) @bitpredator
+2. feat: .github\workflows\lint.yml @bitpredator
