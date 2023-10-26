@@ -1,4 +1,6 @@
 Config = {}
+Config.Locale = 'en'
+
 Config.Shops = {
     ['ambulance'] = { -- Job name
         label = 'Hospital Shop',
@@ -8,16 +10,18 @@ Config.Shops = {
             sprite = 61,
             color = 8,
             scale = 0.7,
-            string = 'ambulance'
+            {
+             label = _U('ambulance')
+            }
         },
         locations = {
-            stash = {
-                string = '[E] - Access Inventory',
+            stash = {{
+                label = _U('access_inventory')},
                 coords = vec3(309.415375, -561.784607, 43.282104),
                 range = 3.0
             },
-            shop = {
-                string = '[E] - Access Shop',
+            shop = {{
+                label = _U('access_shop')},
                 coords = vec3(308.782410, -592.061523, 43.282104),
                 range = 4.0
             }

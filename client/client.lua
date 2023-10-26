@@ -16,7 +16,7 @@ end)
 
 RegisterNetEvent('bpt_oxshops:setProductPrice')
 AddEventHandler('bpt_oxshops:setProductPrice', function(shop, slot)
-    local input = lib.inputDialog(Strings.sell_price, {Strings.amount_input})
+    ESX.ShowNotification(_U('sell_price'), _U('amount_input'))
     local price
     if not input then price = 0 end
     price = tonumber(input[1])
@@ -24,8 +24,8 @@ AddEventHandler('bpt_oxshops:setProductPrice', function(shop, slot)
     TriggerEvent('ox_inventory:closeInventory')
     TriggerServerEvent('bpt_oxshops:setData', shop, slot, math.floor(price))
     lib.notify({
-        title = Strings.success,
-        description = (Strings.item_stocked_desc):format(price),
+        title = _U('success'),
+        description = _U('item_stocked_desc'):format(price),
         type = 'success'
     })
 end)
@@ -47,7 +47,7 @@ end
 CreateThread(function()
     for _,v in pairs(Config.Shops) do
         if v.blip.enabled then
-            createBlip(v.blip.coords, v.blip.sprite, v.blip.color, v.blip.string, v.blip.scale)
+            createBlip(v.blip.coords, v.blip.sprite, v.blip.color, v.blip, v.blip.scale)
         end
     end
 end)

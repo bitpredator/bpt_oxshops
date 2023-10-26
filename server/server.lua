@@ -13,7 +13,7 @@ CreateThread(function()
 	for k,v in pairs(Config.Shops) do
 		local stash = {
 			id = k,
-			label = v.label..' '..Strings.inventory,
+			label = _U('inventory'),
 			slots = 50,
 			weight = 100000,
 		}
